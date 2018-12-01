@@ -1,3 +1,4 @@
+/*
 Firmware Error (ACPI): Failure looking up [^GFX0.CLID], AE_NOT_FOUND (20180105/dswload-390)
 Firmware Error (ACPI): Failure looking up [^^UBTC.MGI0], AE_NOT_FOUND (20180105/dswload-390)
 Firmware Error (ACPI): Failure looking up [^^UBTC.MGI1], AE_NOT_FOUND (20180105/dswload-390)
@@ -28,6 +29,7 @@ Firmware Error (ACPI): Failure looking up [^^UBTC.STS5], AE_NOT_FOUND (20180105/
 Firmware Error (ACPI): Failure looking up [^^UBTC.STS6], AE_NOT_FOUND (20180105/dswload-390)
 Firmware Error (ACPI): Failure looking up [^^UBTC.STS7], AE_NOT_FOUND (20180105/dswload-390)
 Firmware Error (ACPI): Failure looking up [^GFX0.IUER], AE_NOT_FOUND (20180105/dswload-390)
+*/
 /*
  * Intel ACPI Component Architecture
  * AML/ASL+ Disassembler version 20180105 (64-bit version)
@@ -76,14 +78,12 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "SLIC-MPC", 0x00000000)
     External (_PR_.PDTS, UnknownObj)
     External (_PR_.PKGA, UnknownObj)
     External (_PR_.POWS, UnknownObj)
-    External (_PR_.PR00, DeviceObj)
     External (_PR_.PR00._PPC, MethodObj)    // 0 Arguments
     External (_PR_.PR00.LPSS, PkgObj)
     External (_PR_.PR00.TPSS, PkgObj)
     External (_PR_.TRPD, UnknownObj)
     External (_PR_.TRPF, UnknownObj)
     External (_SB_.IETM, UnknownObj)
-    External (_SB_.PCI0.GFX0, DeviceObj)
     External (_SB_.PCI0.GFX0.AINT, MethodObj)    // 2 Arguments
     External (_SB_.PCI0.GFX0.ALSI, UnknownObj)
     External (_SB_.PCI0.GFX0.ASLC, UnknownObj)
@@ -93,15 +93,12 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "SLIC-MPC", 0x00000000)
     External (_SB_.PCI0.GFX0.CDCK, UnknownObj)
     External (_SB_.PCI0.GFX0.CLID, UnknownObj)
     External (_SB_.PCI0.GFX0.CPDL, IntObj)
-    External (_SB_.PCI0.GFX0.DD01, DeviceObj)
-    External (_SB_.PCI0.GFX0.DD02, DeviceObj)
     External (_SB_.PCI0.GFX0.DD03, DeviceObj)
     External (_SB_.PCI0.GFX0.DD04, DeviceObj)
     External (_SB_.PCI0.GFX0.DD05, DeviceObj)
     External (_SB_.PCI0.GFX0.DD06, DeviceObj)
     External (_SB_.PCI0.GFX0.DD07, DeviceObj)
     External (_SB_.PCI0.GFX0.DD08, DeviceObj)
-    External (_SB_.PCI0.GFX0.DD1F, DeviceObj)
     External (_SB_.PCI0.GFX0.DMOD, UnknownObj)
     External (_SB_.PCI0.GFX0.GHDS, MethodObj)    // 1 Arguments
     External (_SB_.PCI0.GFX0.GLID, MethodObj)    // 1 Arguments
@@ -114,80 +111,53 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "SLIC-MPC", 0x00000000)
     External (_SB_.PCI0.GFX0.NDL5, UnknownObj)
     External (_SB_.PCI0.GFX0.STAT, UnknownObj)
     External (_SB_.PCI0.GFX0.TCHE, UnknownObj)
-    External (_SB_.PCI0.HDAS.PPMS, MethodObj)    // 1 Arguments
     External (_SB_.PCI0.HDAS.PS0X, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.HDAS.PS3X, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.HIDW, MethodObj)    // 4 Arguments
     External (_SB_.PCI0.HIWC, MethodObj)    // 1 Arguments
-    External (_SB_.PCI0.ISP0, DeviceObj)
     External (_SB_.PCI0.LPCB.EC0_.SEN1, DeviceObj)
     External (_SB_.PCI0.LPCB.H_EC.CHRG, DeviceObj)
     External (_SB_.PCI0.LPCB.H_EC.VGBI, UnknownObj)
     External (_SB_.PCI0.LPCB.H_EC.VGBI.UPBT, MethodObj)    // 2 Arguments
     External (_SB_.PCI0.LPCB.H_EC.XDAT, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.PAUD.PUAM, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.PEG0, DeviceObj)
     External (_SB_.PCI0.PEG0.HPME, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.PEG0.PEGP, DeviceObj)
-    External (_SB_.PCI0.PEG0.PG00.PEGP, DeviceObj)
-    External (_SB_.PCI0.PEG1, DeviceObj)
     External (_SB_.PCI0.PEG1.HPME, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.PEG1.PG01.PEGP, DeviceObj)
-    External (_SB_.PCI0.PEG2, DeviceObj)
     External (_SB_.PCI0.PEG2.HPME, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.PEG2.PG02.PEGP, DeviceObj)
     External (_SB_.PCI0.RP01.PON_, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.RP01.PXSX, DeviceObj)
     External (_SB_.PCI0.RP02.PON_, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.RP02.PXSX, DeviceObj)
     External (_SB_.PCI0.RP03.PON_, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.RP03.PXSX, DeviceObj)
     External (_SB_.PCI0.RP04.PON_, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.RP04.PXSX, DeviceObj)
     External (_SB_.PCI0.RP05.PON_, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP05.PWRG, UnknownObj)
-    External (_SB_.PCI0.RP05.PXSX, DeviceObj)
     External (_SB_.PCI0.RP05.RSTG, UnknownObj)
     External (_SB_.PCI0.RP05.SCLK, UnknownObj)
     External (_SB_.PCI0.RP06.PON_, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.RP06.PXSX, DeviceObj)
     External (_SB_.PCI0.RP07.PON_, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.RP07.PXSX, DeviceObj)
     External (_SB_.PCI0.RP08.PON_, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.RP08.PXSX, DeviceObj)
     External (_SB_.PCI0.RP09.PON_, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP09.PWRG, UnknownObj)
-    External (_SB_.PCI0.RP09.PXSX, DeviceObj)
     External (_SB_.PCI0.RP09.RSTG, UnknownObj)
     External (_SB_.PCI0.RP09.SCLK, UnknownObj)
     External (_SB_.PCI0.RP10.PON_, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.RP10.PXSX, DeviceObj)
     External (_SB_.PCI0.RP11.PON_, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.RP11.PXSX, DeviceObj)
     External (_SB_.PCI0.RP12.PON_, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.RP12.PXSX, DeviceObj)
     External (_SB_.PCI0.RP13.PON_, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP13.PWRG, UnknownObj)
-    External (_SB_.PCI0.RP13.PXSX, DeviceObj)
     External (_SB_.PCI0.RP13.RSTG, UnknownObj)
     External (_SB_.PCI0.RP13.SCLK, UnknownObj)
     External (_SB_.PCI0.RP14.PON_, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.RP14.PXSX, DeviceObj)
     External (_SB_.PCI0.RP15.PON_, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.RP15.PXSX, DeviceObj)
     External (_SB_.PCI0.RP16.PON_, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.RP16.PXSX, DeviceObj)
     External (_SB_.PCI0.RP17.PON_, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.RP17.PWRG, UnknownObj)
-    External (_SB_.PCI0.RP17.PXSX, DeviceObj)
     External (_SB_.PCI0.RP17.RSTG, UnknownObj)
     External (_SB_.PCI0.RP17.SCLK, UnknownObj)
     External (_SB_.PCI0.RP18.PON_, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.RP18.PXSX, DeviceObj)
     External (_SB_.PCI0.RP19.PON_, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.RP19.PXSX, DeviceObj)
     External (_SB_.PCI0.RP20.PON_, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.RP20.PXSX, DeviceObj)
     External (_SB_.PCI0.SAT0.SDSM, MethodObj)    // 4 Arguments
     External (_SB_.PCI0.XHC_.DUAM, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.XHC_.PS0X, MethodObj)    // 0 Arguments
@@ -200,12 +170,9 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "SLIC-MPC", 0x00000000)
     External (_SB_.UBTC.UCEV, MethodObj)    // 0 Arguments
     External (_SB_.WMID.BRTE, FieldUnitObj)
     External (_SB_.WMID.GWET, MethodObj)    // 2 Arguments
-    External (_TZ_.ETMD, IntObj)
     External (_TZ_.TZ00, DeviceObj)
     External (_TZ_.TZ01, DeviceObj)
     External (ALSE, UnknownObj)
-    External (BCLP, UnknownObj)    // Conflicts with a later declaration
-    External (BNUM, UnknownObj)    // Conflicts with a later declaration
     External (BRTL, UnknownObj)
     External (CADL, UnknownObj)
     External (CSTE, UnknownObj)
@@ -231,8 +198,6 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "SLIC-MPC", 0x00000000)
     External (M32L, UnknownObj)
     External (M64B, UnknownObj)
     External (M64L, UnknownObj)
-    External (MMRP, MethodObj)    // 1 Arguments
-    External (MMTB, MethodObj)    // 1 Arguments
     External (NSTE, UnknownObj)
     External (NXD1, IntObj)
     External (NXD2, IntObj)
@@ -270,14 +235,11 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "SLIC-MPC", 0x00000000)
     External (RP17.PWRG, UnknownObj)
     External (RP17.RSTG, UnknownObj)
     External (RP17.SCLK, UnknownObj)
-    External (RTIP, UnknownObj)    // Conflicts with a later declaration
     External (SAT0.NVM1.VLPM, UnknownObj)
     External (SAT0.NVM2.VLPM, UnknownObj)
     External (SAT0.NVM3.VLPM, UnknownObj)
     External (SGGP, UnknownObj)
     External (SGMD, UnknownObj)
-    External (TBTD, MethodObj)    // 1 Arguments
-    External (TBTF, MethodObj)    // 1 Arguments
     External (TPWR, DeviceObj)
     External (UBTC, DeviceObj)
     External (UP1D, UnknownObj)
