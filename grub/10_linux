@@ -201,6 +201,12 @@ EOF
 	initrd	${rel_dirname}/${initrd}
 EOF
   fi
+  ACPI_OVERRIDE_FILE="/boot/dsdt.aml"
+  if [ -f "$ACPI_OVERRIDE_FILE" ]; then
+    sed "s/^/$submenu_indentation/" << EOF
+	acpi ${ACPI_OVERRIDE_FILE}
+EOF
+  fi
   sed "s/^/$submenu_indentation/" << EOF
 }
 EOF
