@@ -50,7 +50,7 @@ Firmware Error (ACPI): Failure looking up [^GFX0.IUER], AE_NOT_FOUND (20180105/d
  *     Compiler ID      "ACPI"
  *     Compiler Version 0x00040000 (262144)
  */
-DefinitionBlock ("", "DSDT", 2, "HPQOEM", "SLIC-MPC", 0x00000001)
+DefinitionBlock ("", "DSDT", 2, "HPQOEM", "SLIC-MPC", 0x00000002)
 {
     External (_GPE.AL6F, MethodObj)    // 0 Arguments
     External (_GPE.HLVT, MethodObj)    // 0 Arguments
@@ -15184,6 +15184,10 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "SLIC-MPC", 0x00000001)
 
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
+                Return (0x0F)
+                /* Not clear why this fails with a EA_NOT_FOUND. Harcoded to return an OK status */
+
+                /*
                 If ((^^^LPCB.EC0.PCBV == 0x02))
                 {
                     If ((MOID == 0x43))
@@ -15201,7 +15205,7 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "SLIC-MPC", 0x00000001)
                     }
 
                     Return (0x0F)
-                }
+                }*/
             }
 
             Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
