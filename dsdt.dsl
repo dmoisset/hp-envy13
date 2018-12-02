@@ -15055,10 +15055,18 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "SLIC-MPC", 0x00000002)
             CreateBitField (SBFI, \_SB.PCI0.I2C1.TPL1._Y25._LL, ILVL)  // _LL_: Low Level
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
+                /* The following block is supposed to run in Windows versions strictly older than "Windows 2012" 
+                 * However, we are declaring ourselves Windows 2009 to avoid crashing (via acpi_osi=... kernel param)
+                 * but we don't want to run this because it appears to interfere with the i2c-hid driver
+                 * So, we'll just remove this, and behave as a newer windows wrt this bit
+                 */
+
+                /*
                 If ((OSYS < 0x07DC))
                 {
                     SRXO (GPLI, One)
                 }
+                */
 
                 INT1 = GNUM (GPLI)
                 INT2 = INUM (GPLI)
@@ -15210,10 +15218,15 @@ DefinitionBlock ("", "DSDT", 2, "HPQOEM", "SLIC-MPC", 0x00000002)
 
             Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
             {
-                If ((OSYS < 0x07DC))
-                {
-                    Return (SBFI) /* \_SB_.PCI0.I2C1.TPL1.SBFI */
-                }
+                /* The following block is supposed to run in Windows versions strictly older than "Windows 2012" 
+                 * However, we are declaring ourselves Windows 2009 to avoid crashing (via acpi_osi=... kernel param)
+                 * but we don't want to run this because it appears to interfere with the i2c-hid driver
+                 * So, we'll just remove this, and behave as a newer windows wrt this bit
+                 */
+                // If ((OSYS < 0x07DC))
+                // {
+                //     Return (SBFI) /* \_SB_.PCI0.I2C1.TPL1.SBFI */
+                // }
 
                 If ((SDM1 == Zero))
                 {
