@@ -77,7 +77,8 @@ $ sudo apt install acpica-tools
 ``` 
 
 And then decompiled and edited my current laptop ACPI code, resulting on the
-source files that are in this repo. I then can compile those with
+source files that are in this repo. I then can compile those going to a clone
+of this repo and running:
 
 ```
 $ make
@@ -87,7 +88,8 @@ $ make install
 The alter will require your root password. This added a `dsdt.aml` file in 
 `/boot`, which contains the updated and compiled ACPI code. This code needs
 to be loaded by the grubloader, but it's not a linux kernel option; this
-requires an extra line in the bootloader (right after the linux line) saying
+requires an extra line in the bootloader (right after the `linux ...` line)
+saying
 
 ```
 acpi /boot/dsdt.aml
