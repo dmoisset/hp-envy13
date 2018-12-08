@@ -68,7 +68,7 @@ the laptop.
 
 WARNING: this probably may not work if your laptop is even a single bit different
 to mine hardware-wise, or even if it has a different BIOS version (at the time of
-writing this, mine has TODO).
+writing this, mine has version  F.16-09/26/2018).
 
 So I installed the ACPI code compiler:
 
