@@ -5,5 +5,5 @@ install: /boot/dstd.aml
 %.aml: %.dsl
 	iasl -tc $<
 
-/boot/dstd.aml: dsdt.aml
+/boot/dsdt.aml: dsdt.aml
 	sudo cp $< $@
