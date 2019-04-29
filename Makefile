@@ -1,6 +1,6 @@
 all: dsdt.aml
 
-install: /boot/dstd.aml
+install: /boot/dsdt.aml
 
 %.aml: %.dsl
 	iasl -tc $<
