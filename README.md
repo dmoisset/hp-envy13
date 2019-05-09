@@ -98,7 +98,40 @@ acpi /boot/dsdt.aml
 You can trying editing the grub2 command line again, and you may have a working
 touchscreen.
 
-To make it permanent, you can put the `grub/10_linux` script on top of the
-existing `/etc/grub.d/10_linux` file and rerun `update-grub`. Note that this
-script is based on my version of `grub-common` (2.02-2ubuntu8.9) so may break 
-stuff if you have a different version
+Make it permanent
+------------------
+
+### Via /etc/grub.d/10_linux
+
+**Note: This method is based off my version of `grub-common` (2.02-2ubuntu8.9) and may break if you have a different version**
+
+Replace your existing `/etc/grub.d/10_linux` file with the `grub/10_linux` file in this repo.
+
+Then re-run `update-grub` and reboot.
+
+### Alternative method via Grub Customizer
+If your version of `grub-common` is different, [Grub Customizer](http://tipsonubuntu.com/2018/03/11/install-grub-customizer-ubuntu-18-0I-lts/) can also be used.
+
+First, right-click on the boot option for Ubuntu and select edit:
+
+![image](https://user-images.githubusercontent.com/14095134/57425669-0c225600-7214-11e9-8d4a-c5a3e9ec8d51.png)
+
+Then, insert the line `acpi /boot/dsdt.aml` below the line starting with `linux`.
+
+Click Ok to close the window.
+
+**Important:**
+
+Grub Customizer will try and remove quoation marks from kernel parameters. This will cause `update-grub` to fail.
+
+To prevent this, go to the General Settings tab.
+
+![image](https://user-images.githubusercontent.com/14095134/57425793-9965aa80-7214-11e9-810a-8214b16d9c10.png)
+
+Then, re-add any lost quotation marks:
+
+![image](https://user-images.githubusercontent.com/14095134/57425902-11cc6b80-7215-11e9-9a3d-66c2a8315cc6.png)
+
+You will need to re-add the quotation marks any time you make changes in Grub Customizer.
+
+Finally, click the Save button in the top left to make your changes permanent.
